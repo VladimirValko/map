@@ -20,7 +20,8 @@ function App() {
   });
 
   const locateMe = () => {
-    mapRef?.current?.panTo([geolocation.latitude, geolocation.longitude]);
+    mapRef ??
+      mapRef?.current?.panTo([geolocation.latitude, geolocation.longitude]);
     console.log("panned");
   };
 
