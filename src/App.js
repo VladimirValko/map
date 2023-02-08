@@ -25,6 +25,8 @@ function App() {
     console.log("panned");
   };
 
+  console.log(window.localStorage);
+
   return (
     <YMaps
       query={{ lang: "ru_RU", apikey: "52b7642c-e57a-448f-924e-5573575bd8e1" }}
