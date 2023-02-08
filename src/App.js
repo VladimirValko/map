@@ -5,12 +5,13 @@ import {
   ZoomControl,
   Placemark,
 } from "@pbe/react-yandex-maps";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import useGeolocation from "react-hook-geolocation";
 
 import { tours } from "./mockData";
 
 function App() {
+  const [data, setData] = useState({});
   const mapRef = useRef();
 
   const geolocation = useGeolocation({
@@ -25,15 +26,14 @@ function App() {
     console.log("panned");
   };
 
-  setTimeout(() => {
-    const data = JSON.stringify(window.postMessage);
-    console.log(data);
-    alert(JSON.stringify(window.postMessage));
-  }, 3000);
-
   window.addEventListener("message", (message) => {
-    alert(message.data, "ooolololololo"); // Wayne is coming!!!
+    setData(message.data);
+    alert(message.data);
   });
+
+  useEffect(() => {
+    locateMe();
+  }, [data]);
 
   return (
     <YMaps
