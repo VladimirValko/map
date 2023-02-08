@@ -41,7 +41,7 @@ function App() {
     alert(message.data);
   });
 
-  console.log(data);
+  alert(`${data.checkpoints[0].latitude}`);
 
   useEffect(() => {
     locateToStart();
