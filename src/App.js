@@ -26,24 +26,10 @@ function App() {
     console.log("panned");
   };
 
-  const locateToStart = () => {
-    mapRef &&
-      data &&
-      mapRef?.current?.panTo([
-        data.checkpoints[0].latitude,
-        data.checkpoints[0].longitude,
-      ]);
-    console.log("panned to start");
-  };
-
   window.addEventListener("message", (message) => {
     setData(JSON.parse(message.data));
     alert(message.data);
   });
-
-  useEffect(() => {
-    locateToStart();
-  }, [data]);
 
   // НУЖНО ЧТО БЫ КАРТА ПАНОРАМИЛАСЬ НА НАЧАЛО МАРШРУТА _ 1ю ТОЧКУ
   // НУЖНО ЧТО БЫ КАРТА ПАНОРАМИЛАСЬ НА НАЧАЛО МАРШРУТА _ 1ю ТОЧКУ
@@ -59,12 +45,12 @@ function App() {
     >
       <Map
         instanceRef={mapRef}
-        defaultState={{ center: [44.099, 39.071], zoom: 16 }}
+        defaultState={{ center: [44.099, 39.071], zoom: 8 }}
         width={"100vw"}
         height={"100vh"}
         onLoad={() => locateToStart()}
       >
-        {tours[0].checkpoints.map((point) => (
+        {data.checkpoints.map((point) => (
           <Placemark
             key={point.id}
             geometry={[point.latitude, point.longitude]}
