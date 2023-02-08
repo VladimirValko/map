@@ -29,7 +29,7 @@ function App() {
   window.addEventListener("message", (message) => {
     const obj = JSON.parse(message.data);
     setData(obj);
-    alert(message.data);
+    alert(typeof message.data);
   });
 
   // НУЖНО ЧТО БЫ КАРТА ПАНОРАМИЛАСЬ НА НАЧАЛО МАРШРУТА _ 1ю ТОЧКУ
