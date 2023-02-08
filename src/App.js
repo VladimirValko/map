@@ -26,9 +26,9 @@ function App() {
   };
 
   setTimeout(() => {
-    const data = JSON.stringify(window);
+    const data = JSON.stringify(window.postMessage);
     console.log(data);
-    alert(JSON.stringify(window));
+    alert(JSON.stringify(window.postMessage));
   }, 3000);
 
   return (
