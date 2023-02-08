@@ -25,8 +25,8 @@ function App() {
     console.log("panned");
   };
 
-  const data = window.localStorage;
-  console.log(window.localStorage);
+  const data = JSON.stringify(window.localStorage);
+  console.log(data);
   alert(`${data}`);
 
   return (
