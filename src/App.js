@@ -25,9 +25,11 @@ function App() {
     console.log("panned");
   };
 
-  const data = JSON.stringify(window.localStorage);
-  console.log(data);
-  alert(JSON.stringify(window.localStorage));
+  setTimeout(() => {
+    const data = JSON.stringify(window.postMessage);
+    console.log(data);
+    alert(JSON.stringify(window.postMessage));
+  }, 3000);
 
   return (
     <YMaps
