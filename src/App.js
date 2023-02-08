@@ -25,7 +25,8 @@ function App() {
     console.log("panned");
   };
 
-  const data = window.localStorage.getItem("data");
+  const data = window.localStorage;
+  console.log(window.localStorage);
   alert(`${data}`);
 
   return (
