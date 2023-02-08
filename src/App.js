@@ -25,8 +25,8 @@ function App() {
     console.log("panned");
   };
 
-  const data = window.localStorage.getItem("rout-data");
-  data ?? alert(`${data}`);
+  const data = window.localStorage.getItem("data");
+  alert(`${data}`);
 
   return (
     <YMaps
