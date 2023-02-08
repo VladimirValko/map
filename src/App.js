@@ -26,9 +26,9 @@ function App() {
   };
 
   setTimeout(() => {
-    const data = JSON.stringify(window.postMessage);
+    const data = JSON.stringify(window.ReactNativeWebView.postMessage);
     console.log(data);
-    alert(JSON.stringify(window.postMessage));
+    alert(JSON.stringify(window.ReactNativeWebView.postMessage));
   }, 3000);
 
   return (
