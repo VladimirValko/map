@@ -41,10 +41,9 @@ function App() {
     alert(message.data);
   });
 
-  alert(`${data.checkpoints[0].latitude}`);
-
   useEffect(() => {
     locateToStart();
+    alert(`${data.checkpoints[0].latitude}`);
   }, [data]);
 
   // НУЖНО ЧТО БЫ КАРТА ПАНОРАМИЛАСЬ НА НАЧАЛО МАРШРУТА _ 1ю ТОЧКУ
