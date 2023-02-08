@@ -27,9 +27,13 @@ function App() {
   };
 
   window.addEventListener("message", (message) => {
-    const obj = JSON.parse(message.data);
-    setData(obj);
-    alert(typeof message.data);
+    try {
+      const obj = JSON.parse(message.data);
+      setData(obj);
+      alert(message.data);
+    } catch (error) {
+      alert("EROOR");
+    }
   });
 
   // НУЖНО ЧТО БЫ КАРТА ПАНОРАМИЛАСЬ НА НАЧАЛО МАРШРУТА _ 1ю ТОЧКУ
