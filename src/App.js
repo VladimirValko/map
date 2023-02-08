@@ -33,7 +33,7 @@ function App() {
         data.checkpoints[0].latitude,
         data.checkpoints[0].longitude,
       ]);
-    console.log("panned");
+    console.log("panned to start");
   };
 
   window.addEventListener("message", (message) => {
@@ -43,7 +43,6 @@ function App() {
 
   useEffect(() => {
     locateToStart();
-    alert(`${data.checkpoints[0].latitude}`);
   }, [data]);
 
   // НУЖНО ЧТО БЫ КАРТА ПАНОРАМИЛАСЬ НА НАЧАЛО МАРШРУТА _ 1ю ТОЧКУ
