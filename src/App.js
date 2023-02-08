@@ -27,7 +27,8 @@ function App() {
   };
 
   window.addEventListener("message", (message) => {
-    setData(JSON.parse(message.data));
+    const obj = JSON.parse(message.data);
+    setData(obj);
     alert(message.data);
   });
 
@@ -50,7 +51,7 @@ function App() {
         height={"100vh"}
         onLoad={() => locateMe()}
       >
-        {data.checkpoints.map((point) => (
+        {data?.checkpoints?.map((point) => (
           <Placemark
             key={point.id}
             geometry={[point.latitude, point.longitude]}
