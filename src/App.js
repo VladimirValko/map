@@ -27,7 +27,7 @@ function App() {
 
   const data = JSON.stringify(window.localStorage);
   console.log(data);
-  alert(`${data}`);
+  alert(JSON.stringify(window.localStorage));
 
   return (
     <YMaps
