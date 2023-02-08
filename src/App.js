@@ -48,7 +48,7 @@ function App() {
         defaultState={{ center: [44.099, 39.071], zoom: 8 }}
         width={"100vw"}
         height={"100vh"}
-        onLoad={() => locateToStart()}
+        onLoad={() => locateMe()}
       >
         {data.checkpoints.map((point) => (
           <Placemark
